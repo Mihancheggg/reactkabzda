@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Accordion from './components/Accordion/Accordion';
 import Rating from './components/Rating/Rating';
+import {OnOff} from './components/OnOff/OnOff';
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
       <Accordion title={"Menu 1"} collapsed={false}/>
       <Accordion title={"Menu 2"} collapsed={true}/>
       <Rating value={4}/>
+      <Rating value={0}/>
+        <OnOff isOn={true}/>
     </div>
   );
 }
