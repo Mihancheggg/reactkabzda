@@ -3,23 +3,28 @@ import React, {useState} from 'react';
 export const Accordion2 = () => {
     let [collapsed, setCollapsed] = useState(true)
 
+    let toggleBody = () => {
+        setCollapsed(!collapsed)
+    }
+
     return (
         <div>
-            <AccordionTitle anotherTitle={'Users'}/>
+            <AccordionTitle callback={toggleBody} anotherTitle={'Users'}/>
             {!collapsed && <AccordionBody/>}
-            <button onClick={()=>setCollapsed(!collapsed)}>Toggle</button>
+
         </div>
     );
 };
 
 type AccordionTitlePropsType = {
     anotherTitle: string;
+    callback: () => void;
 }
 
 function AccordionTitle(props: AccordionTitlePropsType) {
     console.log('AccordionTitle rendering');
     return (
-        <h3>{`This is ${props.anotherTitle}`}</h3>
+        <h3 onClick={props.callback}>{`This is ${props.anotherTitle}`}</h3>
     )
 }
 
