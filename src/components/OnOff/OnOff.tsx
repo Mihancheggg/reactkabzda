@@ -1,10 +1,8 @@
-// two squares: on & off, and a circle. If props === true, the 'on' is green and circle is green, else the 'off' is red and circle is red
-import React, {useState} from 'react';
-import {inspect} from 'util';
+import React from 'react';
 
 type OnOffPropsType = {
     isOn: boolean;
-    callback: (value: boolean) => void
+    callback: (on: boolean) => void
 }
 
 export const OnOff = (props: OnOffPropsType) => {
