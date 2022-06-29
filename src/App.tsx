@@ -27,7 +27,7 @@ function App() {
 
             <PageTitle title={'This is uncontrolled APP components!'}/>
             <Accordion2/>
-            <Rating2/>
+            <Rating2 onChange={()=>{}}/>
             <OnOff2 callback={setOn}/> {on.toString()}
         </div>
     );

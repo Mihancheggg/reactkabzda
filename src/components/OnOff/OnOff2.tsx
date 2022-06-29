@@ -2,11 +2,12 @@ import React, {useState} from 'react';
 
 type OnOff2PropsType = {
     callback: (isOn: boolean) => void
+    defaultOn?: boolean
 }
 
 export const OnOff2 = (props: OnOff2PropsType) => {
 
-    let [on, setOn] = useState(true)
+    let [on, setOn] = useState<boolean>(props.defaultOn !== undefined ? props.defaultOn : true)
 
     const onStyle = {
         width: '40px',
