@@ -7,6 +7,7 @@ import {OnOff} from './components/OnOff/OnOff';
 import {OnOff2} from './components/OnOff/OnOff2';
 import {Accordion2} from './components/Accordion/Accordion2';
 import {Rating2} from './components/Rating/Rating2';
+import {Select} from './components/Select/Select';
 
 
 function App() {
@@ -21,13 +22,21 @@ function App() {
             <PageTitle title={'These are controlled APP components!'}/>
             <OnOff isOn={on} callback={setOn}/>
             <Rating value={ratingValue} callBack={setRatingValue}/>
-            <Accordion title={'Menu 1'}
-                       collapsed={accordionCollapsed}
-                       callback={() => setAccordionCollapsed(!accordionCollapsed)}/>
-
+            <Accordion
+                onClick={() => {
+                }}
+                title={'Menu 1'}
+                collapsed={accordionCollapsed}
+                callback={() => setAccordionCollapsed(!accordionCollapsed)}
+                items={[{title: 'Dimych', value: 1}, {title: 'Valera', value: 2}, {title: 'Artem', value: 3}]}/>
+            <Select
+                value={'-'}
+                onChange={() => {}}
+                items={[{title: 'Dimych', value: 1}, {title: 'Valera', value: 2}, {title: 'Artem', value: 3}]}/>
             <PageTitle title={'These are uncontrolled APP components!'}/>
             <Accordion2/>
-            <Rating2 onChange={()=>{}}/>
+            <Rating2 onChange={() => {
+        }}/>
             <OnOff2 callback={setOn}/> {on.toString()}
         </div>
     );

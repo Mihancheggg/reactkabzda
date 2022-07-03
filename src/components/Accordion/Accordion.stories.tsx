@@ -17,11 +17,24 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Accordion> = (args) => <Accordion {...args} />;
 
-const click = action('Accordion mode changed')
+const callback = action('Accordion mode changed')
+const click = action('Item was clicked')
 
-export const CollapsedMode = () => <Accordion title={'Collapsed'} collapsed={true} callback={click}/>;
-export const UncollapsedMode = () => <Accordion title={'Uncollapsed'} collapsed={false} callback={click}/>;
+export const CollapsedMode = () => <Accordion onClick={click} items={[]} title={'Collapsed'} collapsed={true}
+                                              callback={callback}/>;
+export const UncollapsedMode = () => <Accordion onClick={click} items={[]} title={'Uncollapsed'} collapsed={false}
+                                                callback={callback}/>;
 export const ModeChanging = () => {
     const [collapsed, setCollapsed] = useState<boolean>(true);
-    return <Accordion title={collapsed ? 'Collapsed' :'Uncollapsed'} collapsed={collapsed} callback={()=> setCollapsed(!collapsed)}/>;
+    return <Accordion onClick={(id)=> (alert(`User ${id}`))}
+                      items={
+                          [
+                              {title: 'Dimych', value: 1},
+                              {title: 'Valera', value: 2},
+                              {title: 'Artem', value: 3}
+                          ]
+                      }
+                      title={collapsed ? 'Collapsed' : 'Uncollapsed'}
+                      collapsed={collapsed}
+                      callback={() => setCollapsed(!collapsed)}/>;
 }
