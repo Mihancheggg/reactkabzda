@@ -22,7 +22,7 @@ export const Rating2 = () => <Rating value={2} callBack={a=>a}/>
 export const Rating3 = () => <Rating value={3} callBack={a=>a}/>
 export const Rating4 = () => <Rating value={4} callBack={a=>a}/>
 export const Rating5 = () => <Rating value={5} callBack={a=>a}/>
-export const changeRating = () => {
+export const ChangeRating = () => {
     const [rating, setRating] = useState<RatingValueType>(5);
     return <Rating value={rating} callBack={value=> setRating(value)}/>
 }

@@ -18,14 +18,14 @@ function App() {
 
     return (
         <div className="App">
-            <PageTitle title={'This is controlled APP components!'}/>
+            <PageTitle title={'These are controlled APP components!'}/>
             <OnOff isOn={on} callback={setOn}/>
             <Rating value={ratingValue} callBack={setRatingValue}/>
             <Accordion title={'Menu 1'}
                        collapsed={accordionCollapsed}
                        callback={() => setAccordionCollapsed(!accordionCollapsed)}/>
 
-            <PageTitle title={'This is uncontrolled APP components!'}/>
+            <PageTitle title={'These are uncontrolled APP components!'}/>
             <Accordion2/>
             <Rating2 onChange={()=>{}}/>
             <OnOff2 callback={setOn}/> {on.toString()}
