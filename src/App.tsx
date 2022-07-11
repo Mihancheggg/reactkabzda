@@ -30,7 +30,7 @@ function App() {
                 callback={() => setAccordionCollapsed(!accordionCollapsed)}
                 items={[{title: 'Dimych', value: 1}, {title: 'Valera', value: 2}, {title: 'Artem', value: 3}]}/>
             <Select
-                value={'-'}
+                value={3}
                 onChange={() => {}}
                 items={[{title: 'Dimych', value: 1}, {title: 'Valera', value: 2}, {title: 'Artem', value: 3}]}/>
             <PageTitle title={'These are uncontrolled APP components!'}/>

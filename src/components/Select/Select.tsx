@@ -12,7 +12,9 @@ export type SelectPropsType = {
 }
 
 export const Select = (props: SelectPropsType) => {
-    const [parentValue, setParentValue] = useState<string | undefined>(undefined)
+
+    const initial = props.items.find(el => el.value === props.value)
+    const [parentValue, setParentValue] = useState<string | undefined>(initial && initial.title)
     const onChange = (e: ChangeEvent<HTMLSelectElement>) => setParentValue(e.currentTarget.value)
     return (
         <div>
