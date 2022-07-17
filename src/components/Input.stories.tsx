@@ -1,7 +1,7 @@
 import React, {ChangeEvent, useRef, useState} from 'react';
 import {Simulate} from 'react-dom/test-utils';
-import select = Simulate.select;
-import input = Simulate.input;
+/*import select = Simulate.select;
+import input = Simulate.input;*/
 
 
 export default {
