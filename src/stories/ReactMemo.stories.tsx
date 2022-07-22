@@ -20,8 +20,14 @@ export const Example1 = () => {
 
     const [users, setUsers] = useState(['Vasya', 'Dimych', 'Kolya'])
 
+    const addUser = () => {
+        const newUsers = [...users, 'Sveta' + new Date().getTime()]
+        setUsers(newUsers)
+    }
+
     return <div>
         <button onClick={() => setCounter(counter + 1)}>+</button>
+        <button onClick={addUser}>Add user</button>
         <NewMessageCounter count={counter}/>
         <Users users={users}/>
     </div>
